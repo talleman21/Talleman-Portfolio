@@ -1,2 +1,175 @@
-.App{
+$primary-color:rgb(252, 143, 0);
+$background-color:rgb(128,128,128,.9);
+
+a{
+  text-decoration: none;
+  color:white;
+}
+a:hover{
+  color:rgb(218, 218, 218)
+}
+i{
+  color:$primary-color;
+  cursor:pointer;
+  margin: 10px 20px;
+  transition:.5s;
+}
+i:hover{
+  color:lighten($primary-color,10)
+}
+
+.landing{
+  overflow-x: hidden;
+  height: 100vh;
+  background-color:grey;
+  background-image: url("../BeardMan.png");
+  background-position-y: 20px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: 18%;
+  padding: 0 5%;
+
+  .title{
+    position:fixed;
+    width:90%;
+    bottom:40px;
+    display:flex;
+    padding:10px 10px 15px 0px;
+    // border:1px solid black;
+    transition: border-left .1s linear .1s;
+
+    .who{
+      margin:auto;
+      max-width:100%;
+      display:flex;
+      cursor: default;
+      white-space: nowrap;
+      flex-direction: column;
+      align-items: center;
+      min-width:50px;     
+      
+      .who-I-am{
+        width:0;
+        color:white;
+        width:auto;
+        font-size: 4rem;
+        font-weight:100;
+        transition:5s linear .2s;
+      }
+      .what-I-do{
+        width: 190px;
+        white-space: nowrap;
+        color:$primary-color;
+        font-size:2rem;
+        transition:.5s linear .2s;
+      }
+    }
+
+    .links{
+      display:flex;      
+      white-space: normal;
+      justify-content: space-between;
+      margin-top:50px;
+      color:$primary-color;
+      font-size:2rem;
+      opacity:0;
+      width:0%;
+      height:0;
+      word-wrap: none;
+      white-space: nowrap;
+      cursor:pointer;
+      transition: width .7s ease-out .1s,opacity .5s ease-out;
+      div{
+        margin-left:200px;
+      }
+    }
+  }
+  .triggered{
+    border-left: 4px solid $primary-color;
+
+    .who{        
+      .who-I-am{
+        width:100%;
+      }
+      .what-I-do{
+        width:100%;
+      }
+    }
+
+    .links{
+      opacity:1;
+      width:72%;
+      white-space: nowrap;
+      cursor:pointer;
+      div:hover{
+        color:white;
+      }
+    }    
+  }
+
+  .contact, .resume, .projects{
+    // border:1px solid black;
+    display:flex;
+    cursor:default;
+    width: 200%;
+    background-color:$background-color;
+    height:75%;
+           
+    transform:translateX(-100%);
+    color:white;
+    font-size:3rem;
+    font-weight:300;
+    opacity:0;
+    transition: .5s ease;
+  }
+  .contact{
+    justify-content: center;
+    align-items: center; 
+  }
+  .resume{    
+   
+  }
+  .resume-title{
+    width:100%;
+    text-align: center;
+    padding:0 5%;
+    .resume-container{
+      display:flex;      
+      width:100%;
+      text-align: left;
+      font-size:1.25rem;
+      .panel{
+        max-height:70vh;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        // margin-left:30px;
+        padding:10px;
+        width:50%;
+        // box-shadow:inset 0 -100px 90px 100px grey;
+      }
+      .panel::-webkit-scrollbar { width: 0 !important }
+      .resume-heading{
+        margin-top:10px;
+        color:$primary-color;
+        font-weight:700;
+      }
+      .bullet{
+        margin-left:70px;
+        font-size:1.125rem;
+        span{
+          font-weight:400;
+        }
+      }
+      .description{
+        font-size:1rem;
+        margin:0 0px 5px 80px;
+      }
+    }
+  }
+  .visible{
+    opacity:1;
+    width:100%;
+    transform:translateX(0);
+  }
 }
