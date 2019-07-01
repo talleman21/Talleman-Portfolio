@@ -8,6 +8,7 @@
     "@types/react": "16.8.20",
     "@types/react-dom": "16.8.4",
     "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "typescript": "3.5.2"
@@ -30,7 +31,8 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 2 ie version"
     ]
   }
 }
