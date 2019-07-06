@@ -98,11 +98,21 @@ i:hover {
 .landing .triggered .links div:hover {
   color: white;
 }
+.landing .background-bright {
+  opacity: 0;
+  transition: 1s;
+}
+.landing .background-dim {
+  opacity: 1;
+  background-color: rgba(128, 128, 128, 0.9);
+  width: 100%;
+  height: 75%;
+  transition: 0.75s;
+}
 .landing .contact, .landing .resume, .landing .projects {
   display: flex;
   cursor: default;
   width: 200%;
-  background-color: rgba(128, 128, 128, 0.9);
   height: 75%;
   transform: translateX(-100%);
   color: white;
@@ -114,6 +124,30 @@ i:hover {
 .landing .contact {
   justify-content: center;
   align-items: center;
+}
+.landing .projects {
+  justify-content: center;
+}
+.landing .projects .card-container {
+  display: flex;
+}
+.landing .projects .card {
+  margin: 30px;
+  width: 250px;
+  height: 215px;
+}
+.landing .projects .card .card-nav {
+  display: flex;
+  margin: -11px 0px;
+}
+.landing .projects .card .card-nav .card-button {
+  background-color: #fc8f00;
+  height: 35px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: 1px solid grey;
+  width: 50%;
+  text-align: center;
 }
 .landing .resume-title {
   width: 100%;
