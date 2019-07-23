@@ -1,211 +1,376 @@
 $primary-color:rgb(252, 143, 0);
-$background-color:rgb(128,128,128,.9);
+$background-color:rgba(128,128,128,.9);
 
-a{
-  text-decoration: none;
-  color:white;
-}
-a:hover{
-  color:rgb(218, 218, 218)
-}
-i{
-  color:$primary-color;
-  cursor:pointer;
-  margin: 10px 20px;
-  transition:.5s;
-}
-i:hover{
-  color:lighten($primary-color,10)
-}
 
-.landing{
-  overflow-x: hidden;
-  height: 100vh;
-  background-color:grey;
-  background-image: url("../BeardMan.png");
-  background-position-y: 20px;
-  background-position-x: center;
-  background-repeat: no-repeat;
-  background-size: 18%;
-  padding: 0 5%;
+@media only screen and (max-width:600px){
+  .border{
+    border:1px solid black;
+  }
+  .display-none{
+    display:none;
+  }
+  body{
+    background-color:$background-color;
 
+  }
+  .App{
+    padding:20px;
+    min-height:100vmax;
+    background-image: url('../BeardManOpacity.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: 40%;
+    background-size: 80%;
+    overflow: scroll;
+    color:white;
+  }
   .title{
-    position:fixed;
-    width:90%;
-    bottom:40px;
-    display:flex;
-    padding:10px 10px 15px 0px;
-    // border:1px solid black;
-    transition: border-left .1s linear .1s;
-
-    .who{
-      margin:auto;
-      max-width:100%;
-      display:flex;
-      cursor: default;
-      white-space: nowrap;
-      flex-direction: column;
-      align-items: center;
-      min-width:50px;     
-      
-      .who-I-am{
-        width:0;
-        color:white;
-        width:auto;
-        font-size: 4rem;
-        font-weight:100;
-        transition:5s linear .2s;
-      }
-      .what-I-do{
-        width: 190px;
-        white-space: nowrap;
-        color:$primary-color;
-        font-size:2rem;
-        transition:.5s linear .2s;
-      }
+    border-left:4px solid $primary-color;
+    padding-left:5px;
+    .who-I-am{
+      color:white;
+      font-size:2.5rem;
+      font-weight:300;
     }
-
-    .links{
-      display:flex;      
-      white-space: normal;
-      justify-content: space-between;
-      margin-top:50px;
+    .what-I-do{
       color:$primary-color;
       font-size:2rem;
-      opacity:0;
-      width:0%;
-      height:0;
-      word-wrap: none;
-      white-space: nowrap;
-      cursor:pointer;
-      transition: width .7s ease-out .1s,opacity .5s ease-out;
-      div{
-        margin-left:200px;
-      }
     }
   }
-  .triggered{
-    border-left: 4px solid $primary-color;
-
-    .who{        
-      .who-I-am{
-        width:100%;
-      }
-      .what-I-do{
-        width:100%;
-      }
-    }
-
-    .links{
-      opacity:1;
-      width:72%;
-      white-space: nowrap;
-      cursor:pointer;
-      div:hover{
-        color:white;
-      }
-    }    
-  }
-
-  .background-bright{
-    opacity:0;
+  .links{
+    text-align:center;
+    color:$primary-color;
+    font-size:1.5rem;
+    // height:70vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:5%;
     transition:1s;
   }
-  .background-dim{
-    opacity:1;
-    background-color:$background-color;
-    width:100%;
-    height:75%;
-    transition:.75s;
+
+  .resume-heading{
+    margin-top:10px;
+    color:$primary-color;
+    font-weight:700;
+    font-size:1.125rem;
+  }
+  .bullet{
+    margin-left:10px;
+    font-size:.8rem;
+    span{
+      font-weight:400;
+    }
+  }
+  .description{
+    font-size:.75rem;
+    margin:0 0px 5px 25px;
+  }
+  li{
+    margin-left:-25px;
   }
 
-  .contact, .resume, .projects{
-    // border:1px solid black;
-    display:flex;
-    cursor:default;
-    width: 200%;
-    // background-color:$background-color;
-    height:75%;
-           
-    transform:translateX(-100%);
-    color:white;
-    font-size:3rem;
-    font-weight:300;
-    opacity:0;
-    transition: .5s ease;
-  }
-  .contact{
-    justify-content: center;
-    align-items: center; 
-  }
-  .projects{
-    justify-content: center;
-    .card-container{
-      display:flex;
-    }
-    .card{
-      margin:30px;
-      // border:1px solid black;
-      width:250px;
-      height:215px;
-      img{
-      }
-      .card-nav{
-        display:flex;
-        margin:-11px 0px;
-        .card-button{
-          background-color: $primary-color;
-          height:35px;
-          cursor:pointer;
-          font-size:1.5rem;
-          border:1px solid grey;
-          width:50%;
-          text-align:center;
-        }
-      }
-    }
-  }
-  .resume-title{
-    width:100%;
-    text-align: center;
-    padding:0 5%;
-    .resume-container{
-      display:flex;      
-      width:100%;
-      text-align: left;
-      font-size:1.25rem;
-      .panel{
-        max-height:70vh;
-        overflow-y: auto;
-        -ms-overflow-style: none;
-        overflow: -moz-scrollbars-none;
-        // margin-left:30px;
-        padding:10px;
-        width:50%;
-        // box-shadow:inset 0 -100px 90px 100px grey;
-      }
-      .panel::-webkit-scrollbar { width: 0 !important }
-      .resume-heading{
-        margin-top:10px;
-        color:$primary-color;
-        font-weight:700;
-      }
-      .bullet{
-        margin-left:70px;
-        font-size:1.125rem;
-        span{
-          font-weight:400;
-        }
-      }
-      .description{
-        font-size:1rem;
-        margin:0 0px 5px 80px;
-      }
-    }
-  }
-  .visible{
-    opacity:1;
-    width:100%;
-    transform:translateX(0);
-  }
+// .body{
+//   background-color: $background-color;
+// }
+// .main{
+//   background-color:$background-color;
+//   background-image:url("../BeardManOpacity.png");
+//   background-size: contain;
+//   background-attachment: fixed;
+//   background-repeat: no-repeat;
+//   background-position-x: center;
+// }
+
+
+
+// .landing{
+  
+//   // height:100vh;
+//   // border:1px solid black;
+  
+
+// }
+// .title{
+//   border:1px solid green;
+//   padding:4px;
+// }
+// .who{
+//   border:1px solid $primary-color;
+//   border-left-width: 6px;
+//   padding:5px;
+// }
+// .who-I-am{
+//   font-size:2.5rem;
+//   font-weight:300;
+//   color:white;
+// }
+// .what-I-do{
+//   color:$primary-color;
+//   font-size:1.5rem;
+// }
+
+// .contact{
+//   font-size:2rem;
+//   color:white;
+//   a{
+//     text-decoration:none;
+//     color:white;
+//     font-weight:300;
+//   }
+//   i{
+//     color:$primary-color;
+//     cursor:pointer;
+//     margin: 10px 20px;
+//     transition:.5s;
+//   }
+// }
+// .projects{
+//   border:1px solid blue;
+
+//   text-align:center;
+//   justify-content: center;
+// }
+// .projects-container{
+//   height:100vh;  
+//   max-width:1000px;  
+//   border:1px solid black;
+// }
+//   .card-container{
+//     border:1px solid black;
+
+//     .card{
+//       border:1px solid black;
+//     }
+//   }
+  
+
+// .links{
+//   color:$primary-color;
+//   display:flex;
+//   flex-direction: column;
+//   height: 80vh;
+//   div{
+//     margin:auto;
+//     flex-basis: 1;
+//     font-size:1.5rem;
+//   }
+// }
+// }
 }
+
+// @media only screen and (min-width:600px){
+//   a{
+//     text-decoration: none;
+//     color:white;
+//   }
+//   a:hover{
+//     color:rgb(218, 218, 218)
+//   }
+//   i{
+//     color:$primary-color;
+//     cursor:pointer;
+//     margin: 10px 20px;
+//     transition:.5s;
+//   }
+//   i:hover{
+//     color:lighten($primary-color,10)
+//   }
+  
+//   .main{
+//     overflow-x: hidden;
+//     height: 100vh;
+//     background-color:grey;
+//     background-image: url("../BeardMan.png");
+//     background-position-y: 10px;
+//     background-position-x: center;
+//     background-repeat: no-repeat;
+//     padding: 0 5%;
+//     transition:1s;
+    
+  
+//     .title{
+//       position:fixed;
+//       width:90%;
+//       bottom:40px;
+//       display:flex;
+//       padding:10px 10px 15px 0px;
+//       transition: border-left .1s linear .1s;
+  
+//       .who{
+//         margin:auto;
+//         max-width:100%;
+//         display:flex;
+//         cursor: default;
+//         white-space: nowrap;
+//         flex-direction: column;
+//         align-items: center;
+//         min-width:50px;   
+//         border:none;  
+        
+//         .who-I-am{
+//           width:0;
+//           color:white;
+//           width:auto;
+//           font-size: 4rem;
+//           font-weight:100;
+//           transition:5s linear .2s;
+//         }
+//         .what-I-do{
+//           width: 190px;
+//           white-space: nowrap;
+//           color:$primary-color;
+//           font-size:2rem;
+//           transition:.5s linear .2s;
+//         }
+//       }
+  
+//       .links{
+//         display:flex;      
+//         flex-direction: row;
+//         white-space: normal;
+//         justify-content: space-between;
+//         margin-top:50px;
+//         color:$primary-color;
+//         opacity:0;
+//         width:0%;
+//         height:0;
+//         word-wrap: none;
+//         white-space: nowrap;
+//         cursor:pointer;
+//         transition: width .7s ease-out .1s,opacity .5s ease-out;
+//         div{
+//           margin-left:200px;
+//           font-size:2rem;
+//         }
+//       }
+//     }
+//     .triggered{
+//       border-left: 4px solid $primary-color;
+  
+//       .who{        
+//         .who-I-am{
+//           width:100%;
+//         }
+//         .what-I-do{
+//           width:100%;
+//         }
+//       }
+  
+//       .links{
+//         opacity:1;
+//         width:72%;
+//         white-space: nowrap;
+//         cursor:pointer;
+//         div:hover{
+//           color:white;
+//         }
+//       }    
+//     }
+  
+//     // .background-bright{
+//     //   opacity:0;
+//     //   transition:1s;
+//     // }
+//     .page-container{
+//       width:100%;
+//       height:75%;
+//       transition:.75s;
+//     }
+  
+//     .contact, .resume, .projects{
+//       // border:1px solid black;
+//       display:flex;
+//       cursor:default;
+//       width: 200%;
+//       height:75%;
+             
+//       transform:translateX(-100%);
+//       color:white;
+//       font-size:3rem;
+//       font-weight:300;
+//       opacity:0;
+//       transition: .5s ease;
+//     }
+//     .contact{
+//       justify-content: center;
+//       align-items: center; 
+//     }
+//     .projects{
+//       justify-content: center;
+//       .card-container{
+//         display:flex;
+//         flex-wrap: wrap;
+//       }
+//       .card{
+//         margin:30px;
+//         // border:1px solid black;
+//         width:250px;
+//         height:215px;
+//         img{
+//         }
+//         .card-nav{
+//           display:flex;
+//           margin:-11px 0px;
+//           .card-button{
+//             background-color: $primary-color;
+//             opacity:.85;
+//             height:35px;
+//             cursor:pointer;
+//             font-size:1.5rem;
+//             border:1px solid grey;
+//             width:50%;
+//             text-align:center;
+//           }
+//         }
+//       }
+//     }
+//     .resume-title{
+//       width:100%;
+//       text-align: center;
+//       padding:0 5%;
+//       .resume-container{
+//         display:flex;      
+//         width:100%;
+//         text-align: left;
+//         font-size:1.25rem;
+//         .panel{
+//           max-height:70vh;
+//           overflow-y: auto;
+//           -ms-overflow-style: none;
+//           overflow: -moz-scrollbars-none;
+//           // margin-left:30px;
+//           padding:10px;
+//           width:50%;
+//           // box-shadow:inset 0 -100px 90px 100px grey;
+//         }
+//         .panel::-webkit-scrollbar { width: 0 !important }
+//         .resume-heading{
+//           margin-top:10px;
+//           color:$primary-color;
+//           font-weight:700;
+//         }
+//         .bullet{
+//           margin-left:70px;
+//           font-size:1.125rem;
+//           span{
+//             font-weight:400;
+//           }
+//         }
+//         .description{
+//           font-size:1rem;
+//           margin:0 0px 5px 80px;
+//         }
+//       }
+//     }
+//     .visible{
+//       opacity:1;
+//       width:100%;
+//       transform:translateX(0);
+//     }
+//   }
+//   .main-dim{
+//     background-image:url(../BeardManOpacity.png)
+//   }
+// }

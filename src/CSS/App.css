@@ -1,196 +1,77 @@
-a {
-  text-decoration: none;
-  color: white;
-}
+@media only screen and (max-width: 600px) {
+  .border {
+    border: 1px solid black;
+  }
 
-a:hover {
-  color: #dadada;
-}
+  .display-none {
+    display: none;
+  }
 
-i {
-  color: #fc8f00;
-  cursor: pointer;
-  margin: 10px 20px;
-  transition: 0.5s;
-}
+  body {
+    background-color: rgba(128, 128, 128, 0.9);
+  }
 
-i:hover {
-  color: #ffa530;
-}
+  .App {
+    padding: 20px;
+    min-height: 100vmax;
+    background-image: url("../BeardManOpacity.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: 40%;
+    background-size: 80%;
+    overflow: scroll;
+    color: white;
+  }
 
-.landing {
-  overflow-x: hidden;
-  height: 100vh;
-  background-color: grey;
-  background-image: url("../BeardMan.png");
-  background-position-y: 20px;
-  background-position-x: center;
-  background-repeat: no-repeat;
-  background-size: 18%;
-  padding: 0 5%;
-}
-.landing .title {
-  position: fixed;
-  width: 90%;
-  bottom: 40px;
-  display: flex;
-  padding: 10px 10px 15px 0px;
-  transition: border-left 0.1s linear 0.1s;
-}
-.landing .title .who {
-  margin: auto;
-  max-width: 100%;
-  display: flex;
-  cursor: default;
-  white-space: nowrap;
-  flex-direction: column;
-  align-items: center;
-  min-width: 50px;
-}
-.landing .title .who .who-I-am {
-  width: 0;
-  color: white;
-  width: auto;
-  font-size: 4rem;
-  font-weight: 100;
-  transition: 5s linear 0.2s;
-}
-.landing .title .who .what-I-do {
-  width: 190px;
-  white-space: nowrap;
-  color: #fc8f00;
-  font-size: 2rem;
-  transition: 0.5s linear 0.2s;
-}
-.landing .title .links {
-  display: flex;
-  white-space: normal;
-  justify-content: space-between;
-  margin-top: 50px;
-  color: #fc8f00;
-  font-size: 2rem;
-  opacity: 0;
-  width: 0%;
-  height: 0;
-  word-wrap: none;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: width 0.7s ease-out 0.1s, opacity 0.5s ease-out;
-}
-.landing .title .links div {
-  margin-left: 200px;
-}
-.landing .triggered {
-  border-left: 4px solid #fc8f00;
-}
-.landing .triggered .who .who-I-am {
-  width: 100%;
-}
-.landing .triggered .who .what-I-do {
-  width: 100%;
-}
-.landing .triggered .links {
-  opacity: 1;
-  width: 72%;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.landing .triggered .links div:hover {
-  color: white;
-}
-.landing .background-bright {
-  opacity: 0;
-  transition: 1s;
-}
-.landing .background-dim {
-  opacity: 1;
-  background-color: rgba(128, 128, 128, 0.9);
-  width: 100%;
-  height: 75%;
-  transition: 0.75s;
-}
-.landing .contact, .landing .resume, .landing .projects {
-  display: flex;
-  cursor: default;
-  width: 200%;
-  height: 75%;
-  transform: translateX(-100%);
-  color: white;
-  font-size: 3rem;
-  font-weight: 300;
-  opacity: 0;
-  transition: 0.5s ease;
-}
-.landing .contact {
-  justify-content: center;
-  align-items: center;
-}
-.landing .projects {
-  justify-content: center;
-}
-.landing .projects .card-container {
-  display: flex;
-}
-.landing .projects .card {
-  margin: 30px;
-  width: 250px;
-  height: 215px;
-}
-.landing .projects .card .card-nav {
-  display: flex;
-  margin: -11px 0px;
-}
-.landing .projects .card .card-nav .card-button {
-  background-color: #fc8f00;
-  height: 35px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  border: 1px solid grey;
-  width: 50%;
-  text-align: center;
-}
-.landing .resume-title {
-  width: 100%;
-  text-align: center;
-  padding: 0 5%;
-}
-.landing .resume-title .resume-container {
-  display: flex;
-  width: 100%;
-  text-align: left;
-  font-size: 1.25rem;
-}
-.landing .resume-title .resume-container .panel {
-  max-height: 70vh;
-  overflow-y: auto;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  padding: 10px;
-  width: 50%;
-}
-.landing .resume-title .resume-container .panel::-webkit-scrollbar {
-  width: 0 !important;
-}
-.landing .resume-title .resume-container .resume-heading {
-  margin-top: 10px;
-  color: #fc8f00;
-  font-weight: 700;
-}
-.landing .resume-title .resume-container .bullet {
-  margin-left: 70px;
-  font-size: 1.125rem;
-}
-.landing .resume-title .resume-container .bullet span {
-  font-weight: 400;
-}
-.landing .resume-title .resume-container .description {
-  font-size: 1rem;
-  margin: 0 0px 5px 80px;
-}
-.landing .visible {
-  opacity: 1;
-  width: 100%;
-  transform: translateX(0);
+  .title {
+    border-left: 4px solid #fc8f00;
+    padding-left: 5px;
+  }
+  .title .who-I-am {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  .title .what-I-do {
+    color: #fc8f00;
+    font-size: 2rem;
+  }
+
+  .links {
+    text-align: center;
+    color: #fc8f00;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+    transition: 1s;
+  }
+
+  .resume-heading {
+    margin-top: 10px;
+    color: #fc8f00;
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .bullet {
+    margin-left: 10px;
+    font-size: 0.8rem;
+  }
+  .bullet span {
+    font-weight: 400;
+  }
+
+  .description {
+    font-size: 0.75rem;
+    margin: 0 0px 5px 25px;
+  }
+
+  li {
+    margin-left: -25px;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
