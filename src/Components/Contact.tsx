@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 interface IContactProps {
+  platform:string
 }
 
 const Contact: React.FunctionComponent<IContactProps> = (props) => {

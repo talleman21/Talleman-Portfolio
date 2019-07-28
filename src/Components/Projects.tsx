@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 interface IProjectsProps {
+  platform: string
 }
 
 const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
@@ -45,8 +46,8 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
   ]
   return (
     <div className="projects">
-      Projects
-        <div className="card-container">
+      {props.platform === 'large' ? 'Projects' : null}
+      <div className="card-container">
         {projects.map(project => {
           return (
             <div className="card" key={project.name}>

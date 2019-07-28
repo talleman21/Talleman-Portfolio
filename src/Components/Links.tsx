@@ -3,6 +3,7 @@ import * as React from 'react';
 interface ILinksProps {
   setPage: Function
   page: string
+  platform: string
 }
 
 const Links: React.FunctionComponent<ILinksProps> = (props) => {
@@ -20,7 +21,7 @@ const Links: React.FunctionComponent<ILinksProps> = (props) => {
   }
 
   return (
-    <div className="links" style={props.page === 'home' ? { height: '70vh' } : { height: '10vh' }}>
+    <div className="links" style={props.page === 'home' && props.platform === 'mobile' ? { height: '70vh' } : {}}>
       <div className={hideLink('projects')} onMouseEnter={() => setPageHandler('projects')}>[ Projects ]</div>
       <div className={hideLink('resume')} onMouseEnter={() => setPageHandler('resume')}>[ Resume ]</div>
       <div className={hideLink('contact')} onMouseEnter={() => setPageHandler('contact')}>[ Contact ]</div>
