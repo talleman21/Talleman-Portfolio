@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 interface IResumeProps {
+  platform: string
 }
 
 const Resume: React.FunctionComponent<IResumeProps> = (props) => {
   return (
     <div className='resume'>
       <div className='resume-title'>
-        Resume
+        {props.platform === 'large' ? 'Resume' : null}
         <div className="resume-container">
           <div className='panel'>
             <div className="resume-heading">Developer Skills</div>
@@ -64,6 +65,28 @@ const Resume: React.FunctionComponent<IResumeProps> = (props) => {
             </div>
           </div>
           <div className="panel">
+            <div className="resume-heading">Professional Skills</div>
+            <div style={{ display: 'flex' }}>
+              <div>
+                <div className="bullet"><b>Photoshop</b></div>
+                <div className="bullet"><b>AfterEffects</b></div>
+                <div className="bullet"><b>3DS Max</b></div>
+              </div>
+              <div>
+                <div className="bullet"><b>Modo</b></div>
+                <div className="bullet"><b>Solidworks</b></div>
+                <div className="bullet"><b>Autodesk Inventor</b></div>
+              </div>
+              <div>
+                <div className="bullet"><b>GIT</b></div>
+                <div className="bullet"><b>AX (ERP system)</b></div>                
+              </div>
+            </div>
+            <div className="resume-heading">Projects</div>
+            <div className="bullet"><b>Gradebook</b> Full-Stack Crud application: MERN Stack</div>
+            <div className="bullet"><b>FlashCards</b> Full-Stack Crud application: jQuery, MongoDB, Node.js, Express</div>
+            <div className="bullet"><b>Drum Machine</b> Front-End project: React.js</div>
+            <div className="bullet"><b>Simon Game</b> Front-End project: jQuery, 3DS max for images</div>
             <div className="resume-heading">Education</div>
             <div className="bullet"><b>NWCCD</b> 2001-2002 - AAS Welding Technology</div>
             <div className="bullet"><b>WJSHS</b> (1996-2000) - H.S. Diploma</div>

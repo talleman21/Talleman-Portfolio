@@ -1292,6 +1292,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-swipeable@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@types/react-swipeable/-/react-swipeable-4.3.0.tgz#e6ea299ec7e2c826a22ae5b6cdfcb1533397487d"
+  integrity sha512-ZBpazpHerohJrup7BvHP97eLPKM95QY40yqMOTYFcKnyexZdZCBW5jHcIBSccwDMBvlTZMiwZ4YKkq4DjPHd4A==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@16.8.20":
   version "16.8.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.20.tgz#4f633ecbd0a4d56d0ccc50fff6f9321bbcd7d583"
@@ -7967,6 +7974,13 @@ react-scripts@3.0.1:
     workbox-webpack-plugin "4.2.0"
   optionalDependencies:
     fsevents "2.0.6"
+
+react-swipeable@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-5.3.0.tgz#861bcecab2d5ff462e5737b1a20da2bfe35d8b21"
+  integrity sha512-mOfRfPxbcfl0jC/3DHSYWRkTElr8aU+ZVc4qv+VOhOQfw8+UM7Mhlky+1YhpRQ/5F9NRR36NZHhHP0kC1yEjGQ==
+  dependencies:
+    prop-types "^15.6.2"
 
 react@^16.8.6:
   version "16.8.6"
