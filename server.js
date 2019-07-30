@@ -13,6 +13,9 @@ app.use(bodyParser.json())
 app.use(express.static('./gradebook-build'))
 app.use(express.static('./build'))
 app.use(express.static('./public'))
+app.use(express.static('./simon-game'))
+app.use(express.static('./wiki-search'))
+app.use(express.static('./drum-machine'))
 
 
 console.log(mongoUrl)
@@ -26,6 +29,18 @@ MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
 
   app.get('/gradebook', (req, res) => {
     res.sendFile(__dirname + '/gradebook-build/gradebook.html')
+  })
+
+  app.get('/simon', (req, res) => {
+    res.sendFile(__dirname + '/simon-game/simon.html')
+  })
+
+  app.get('/wiki-search', (req, res) => {
+    res.sendFile(__dirname + '/wiki-search/wiki-search.html')
+  })
+
+  app.get('/drum-machine', (req, res) => {
+    res.sendFile(__dirname + '/drum-machine/drum-machine.html')
   })
 
   app.post('/getdata', (req, res) => {

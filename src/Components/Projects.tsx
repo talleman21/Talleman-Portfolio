@@ -9,19 +9,19 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
   const projects = [
     {
       name: 'GradeBook',
-      liveLink: 'http://www.thomas-alleman.com',
+      liveLink: 'http://www.thomasalleman.com/gradebook',
       githubLink: 'https://github.com/talleman21/gradebook',
       image: 'gradebook.png'
     },
     {
       name: 'Simon',
-      liveLink: 'https://codepen.io/Talleman/full/rvwzMQ',
+      liveLink: 'http://www.thomasalleman.com/simon',
       githubLink: '',
       image: 'simon.png'
     },
     {
       name: 'Wiki-Search',
-      liveLink: 'https://codepen.io/Talleman/full/GxeORz',
+      liveLink: 'http://www.thomasalleman.com/wiki-search',
       githubLink: '',
       image: 'wikisearch.png'
     },
@@ -33,7 +33,7 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
     },
     {
       name: 'Drum Machine',
-      liveLink: 'https://codepen.io/Talleman/full/NBpGjx',
+      liveLink: 'http://www.thomasalleman.com/drum-machine',
       githubLink: '',
       image: 'drummachine.png'
     },
