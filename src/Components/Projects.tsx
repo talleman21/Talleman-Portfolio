@@ -39,7 +39,7 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
     },
     {
       name: 'Markdown Previewer',
-      liveLink: 'https://codepen.io/Talleman/full/vaXjBx',
+      liveLink: 'https:www.thomasalleman.com/markdown-previewer',
       githubLink: '',
       image: 'markdownpreviewer.png'
     },
