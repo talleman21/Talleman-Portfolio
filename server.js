@@ -16,6 +16,7 @@ app.use(express.static('./public'))
 app.use(express.static('./simon-game'))
 app.use(express.static('./wiki-search'))
 app.use(express.static('./drum-machine'))
+app.use(express.static('./markdown-build'))
 
 
 console.log(mongoUrl)
@@ -41,6 +42,10 @@ MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
 
   app.get('/drum-machine', (req, res) => {
     res.sendFile(__dirname + '/drum-machine/drum-machine.html')
+  })
+  
+  app.get('/markdown-previewer', (req, res) => {
+    res.sendFile(__dirname + '/markdown-build/markdown-previewer.html')
   })
 
   app.post('/getdata', (req, res) => {
