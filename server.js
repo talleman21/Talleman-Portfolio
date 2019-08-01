@@ -1,11 +1,14 @@
 
 require('dotenv').config()
+
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const mongoUrl = process.env.DATABASE
 const port = process.env.PORT || 5000
+
+const flashcardRoutes = require('./flashcardRoutes')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -17,12 +20,15 @@ app.use(express.static('./simon-game'))
 app.use(express.static('./wiki-search'))
 app.use(express.static('./drum-machine'))
 app.use(express.static('./markdown-build'))
+app.use(express.static('./flashcards'))
 
 
 console.log(mongoUrl)
 MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
   if (err) console.log(err)
   const db = client.db()
+
+  flashcardRoutes(app,db,client)
 
   app.get('/', (req, res) => {
     res.send('index.html')
@@ -43,9 +49,13 @@ MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
   app.get('/drum-machine', (req, res) => {
     res.sendFile(__dirname + '/drum-machine/drum-machine.html')
   })
-  
+
   app.get('/markdown-previewer', (req, res) => {
     res.sendFile(__dirname + '/markdown-build/markdown-previewer.html')
+  })
+
+  app.get('/flashcards', (req, res) => {
+    res.sendFile(__dirname + '/flashcards/flashcards.html')
   })
 
   app.post('/getdata', (req, res) => {
