@@ -1,0 +1,116 @@
+/* 
+blue rgb(107,140,163) 
+purple rgb(163,158,107)
+green rgb(163,107,111)
+
+
+*/
+
+body {
+  background-color:rgb(107,140,163);
+  font-family: 'Farsan', cursive;
+  font-weight:bolder;
+}
+h1{
+  text-align: center;
+  font-size: 3em;
+}
+p{
+margin-bottom:-8px;
+}
+#USER{
+display:flex;
+flex-direction:column;
+  align-items:flex-end;
+  margin-right:20px;
+  margin-top:20px;
+}
+
+#getUser{
+ width:300px;
+}
+
+
+.title {
+  color:rgb(163,158,107) ;
+  margin: 50px;
+  text-align:center;
+}
+.problem {
+  background-color:rgb(163,107,111); 
+  color:black;
+  box-shadow:5px 5px 30px black;
+  border-color:rgb(163,158,107);
+  border-width: 4px;
+  border-radius: 30px;
+  border-style: solid;
+  text-align:center;
+  font-size:5em;
+  margin:auto;
+  margin-bottom: 30px;
+  max-width: 200px;
+
+}
+.answer{
+
+  text-align: center;
+  font-size:1em;
+  color:black;
+  max-width: 100px;
+  min-width: 20px;
+  margin:auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+
+}
+.operators {
+  margin: auto;
+  margin: 2% 50%;
+  background-color: rgb(163,107,111) !important;
+  box-shadow:5px 5px 30px;
+  border-style: solid !important;
+  border-width: 4px !important;
+  border-color: rgb(163,158,107);
+  border-radius: 12px;
+  color:rgb(163,158,107);
+  font-size: 1.5em;
+
+}
+.feedback{
+  font-size:1.5em;
+  margin-top:30px;
+  display:flex;
+  margin:auto;
+  flex-direction:column;
+}
+
+@media all and (max-width: 600px) { /* screen size until 500px */
+    h1 {
+        font-size: 2em; /* 0.8x default size */
+      }
+    .problem{
+      font-size: 2em;
+    }
+    .answer{
+      font-size: 1em;
+    }
+
+}
+@media all and (max-width: 1100px) {
+  .operators {
+    margin: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    max-width: 200px;
+    max-height: 40px;
+    font-size:1.25em;
+
+  }
+  .feedback{
+    margin:auto;
+    text-align: center;
+  }
+  
+
+  
+}

@@ -27,7 +27,7 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
     },
     {
       name: 'Flashcards',
-      liveLink: 'https://organic-wildflower.glitch.me/',
+      liveLink: 'https://www.thomasalleman.com/flashcards',
       githubLink: '',
       image: 'flashcards.png'
     },
