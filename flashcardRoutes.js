@@ -1,5 +1,4 @@
-const ObjectId = require('mongodb').ObjectId
-const MongoClient = require('mongodb').MongocClient
+
 const bcrypt = require('bcrypt')
 
 module.exports = (app, db, client) => {

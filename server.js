@@ -20,7 +20,7 @@ app.use(express.static('./simon-game'))
 app.use(express.static('./wiki-search'))
 app.use(express.static('./drum-machine'))
 app.use(express.static('./markdown-build'))
-app.use(express.static('./flashcards'))
+app.use(express.static('./Flashcards'))
 
 
 console.log(mongoUrl)
@@ -55,7 +55,7 @@ MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
   })
 
   app.get('/flashcards', (req, res) => {
-    res.sendFile(__dirname + '/flashcards/flashcards.html')
+    res.sendFile(__dirname + '/Flashcards/flashcards.html')
   })
 
   app.post('/getdata', (req, res) => {

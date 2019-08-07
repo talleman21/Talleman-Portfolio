@@ -126,7 +126,6 @@ $background-color:rgba(128,128,128,.9);
     overflow:hidden;
     scrollbar-width: 0;
     color:white;
-    border:1px solid green;
   }
   .dim-bg{
     background-image:url('../BeardManOpacity.png')
@@ -187,8 +186,17 @@ $background-color:rgba(128,128,128,.9);
 
   .contact{
     font-size:3rem;
-    margin-top:10%;
     font-weight:300;
+    max-height:calc(100vh - 250px);
+    overflow:auto;
+    img{
+      border-radius: 50%;
+      margin-top:50px;
+      border:6px solid $primary-color;
+      box-shadow: 0 0 50px 0px black;
+      width:20%;
+      max-width:300px;
+    }
     a{
       text-decoration:none;
       color:white;
@@ -213,6 +221,7 @@ $background-color:rgba(128,128,128,.9);
     margin: 0 100px;    
     max-height:650px;
     overflow: auto;
+    max-height:calc(100vh - 300px)
   }
   .panel{
     max-width:670px;
@@ -247,6 +256,7 @@ $background-color:rgba(128,128,128,.9);
     font-size:2rem;
     font-weight:300;
     margin:20px;
+    max-height:calc(100vh - 250px)
   }
   .card-container{
     display:flex;
