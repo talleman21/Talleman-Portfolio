@@ -28,9 +28,10 @@ MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
   if (err) console.log(err)
   const db = client.db()
 
-  flashcardRoutes(app,db,client)
+  flashcardRoutes(app, db, client)
 
   app.get('/', (req, res) => {
+    console.log(`accessed at ${new Date()}`)
     res.send('index.html')
   })
 
