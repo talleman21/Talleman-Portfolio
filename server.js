@@ -8,13 +8,9 @@ const MongoClient = require('mongodb').MongoClient
 const mongoUrl = process.env.DATABASE
 const port = process.env.PORT || 5000
 
-const flashcardRoutes = require('./flashcardRoutes')
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
-app.use(express.static('./gradebook-build'))
 app.use(express.static('./build'))
+app.use(express.static('./gradebook-build'))
 app.use(express.static('./public'))
 app.use(express.static('./simon-game'))
 app.use(express.static('./wiki-search'))
@@ -22,20 +18,25 @@ app.use(express.static('./drum-machine'))
 app.use(express.static('./markdown-build'))
 app.use(express.static('./Flashcards'))
 
+const flashcardRoutes = require('./flashcardRoutes')
 
-console.log(mongoUrl)
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, client) => {
   if (err) console.log(err)
   const db = client.db()
 
-  flashcardRoutes(app, db, client)
 
   app.get('/', (req, res) => {
-    console.log(`accessed at ${new Date()}`)
+    console.log(`err`)
     res.send('index.html')
   })
 
+  flashcardRoutes(app, db, client)
+
   app.get('/gradebook', (req, res) => {
+    console.log(`gradebook accessed at ${new Date()}`)
     res.sendFile(__dirname + '/gradebook-build/gradebook.html')
   })
 
