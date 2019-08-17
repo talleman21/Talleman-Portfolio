@@ -115,6 +115,13 @@ $background-color:rgba(128,128,128,.9);
   body{
     background-color:$background-color;
   }
+  .calendar{
+    text-align:center;
+    margin:auto;
+    font-size:.6rem;
+    color:white;
+    max-width:800px;
+  }
   .App{
     height:99vh;
     background-image: url('../BeardMan.png');
