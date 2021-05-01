@@ -6,10 +6,10 @@ interface Props {
   
 }
 
-export default function Contact({}: Props): ReactElement {
+export default function About({}: Props): ReactElement {
   return (
     <div>
-      <Header header='Contact'/>
+      <Header header='About'/>
       
     </div>
   )
