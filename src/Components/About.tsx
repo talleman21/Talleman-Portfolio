@@ -48,11 +48,13 @@ export default function About({}: Props): ReactElement {
 
       </div>
       <div className={classes.container}>
-        <h2>Technical Proficiencies</h2>
-        <Divider/>
-        <p>
-          TypeScript | JavaScript | React | Node.js | Express | SQL | MongoDB | Git | VBA | Docker | OAuth | HTML | CSS
-        </p>
+        <div>
+          <h2>Technical Proficiencies</h2>
+          <Divider/>
+          <p>
+            TypeScript | JavaScript | React | Node.js | Express | SQL | MongoDB | Git | VBA | Docker | OAuth | HTML | CSS
+          </p>
+        </div>
       </div>
     </div>
   )
